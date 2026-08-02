@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Scott Andrew Smith</title>
 <meta name="description" content="Scott Andrew Smith — Associate Professor, Academy of Mathematics and Systems Sciences, Chinese Academy of Sciences. Research in singular SPDEs and rough PDEs, probability and mathematical physics, and stochastic fluid and kinetic equations.">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<!-- Inline favicon: avoids a /favicon.ico request that can hang behind a filtering proxy. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a5f7a'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23fdfdfc' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
   :root {
     --bg: #fdfdfc;
@@ -14,8 +17,10 @@
     --accent: #1a5f7a;
     --accent-soft: #eaf2f5;
     --rule: #e4e7ea;
-    --serif: Charter, "Bitstream Charter", Cambria, Georgia, "Times New Roman", serif;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    /* All system fonts — no web-font requests, so nothing to block or stall.
+       CJK fallbacks included for machines configured for Chinese. */
+    --serif: Charter, "Bitstream Charter", Cambria, Georgia, "Times New Roman", "Songti SC", SimSun, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -35,11 +40,11 @@
   }
   header h1 {
     font-family: var(--serif);
-    font-size: 2.4rem;
+    font-size: 2.75rem;
     font-weight: 700;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
     margin: 0 0 0.9rem;
-    line-height: 1.15;
+    line-height: 1.12;
   }
   .affiliation {
     font-family: var(--sans);
@@ -62,17 +67,17 @@
     border-bottom: 1px solid transparent;
   }
   .contact a:hover { border-bottom-color: var(--accent); }
-  section { margin-top: 3.2rem; }
+  section { margin-top: 4rem; }
   h2 {
-    font-family: var(--sans);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 1.2rem;
-    padding-bottom: 0.55rem;
-    border-bottom: 1px solid var(--rule);
+    font-family: var(--serif);
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: var(--text);
+    margin: 0 0 1.6rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--accent);
   }
   .bio p { margin: 0 0 1rem; }
   .bio em { font-style: italic; }
@@ -87,15 +92,26 @@
     border-bottom: 1px solid transparent;
   }
   .bio .scholar a:hover { border-bottom-color: var(--accent); }
-  .category { margin-bottom: 2.6rem; }
+  .bio .scholar .sep {
+    color: var(--faint);
+    margin: 0 0.55rem;
+  }
+  @media (max-width: 400px) {
+    .bio .scholar a { display: block; margin-bottom: 0.35rem; }
+    .bio .scholar .sep { display: none; }
+  }
+  .category { margin-bottom: 3rem; }
   .category:last-child { margin-bottom: 0; }
   h3.cat-title {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.005em;
-    color: var(--text);
-    margin: 0 0 1rem;
+    font-family: var(--sans);
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.1rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--rule);
   }
   .paper {
     padding: 0.85rem 1rem 0.9rem;
@@ -106,7 +122,7 @@
   .paper:hover { background: var(--accent-soft); }
   .paper .title {
     display: block;
-    font-size: 1.02rem;
+    font-size: 1.06rem;
     font-weight: 600;
     line-height: 1.45;
     color: var(--text);
@@ -145,7 +161,7 @@
   }
   a.badge:hover { border-color: var(--accent); }
   footer {
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     padding-top: 1.2rem;
     border-top: 1px solid var(--rule);
     font-family: var(--sans);
@@ -155,7 +171,10 @@
   @media (max-width: 540px) {
     body { font-size: 16px; }
     .wrap { padding-top: 3rem; }
-    header h1 { font-size: 1.9rem; }
+    header h1 { font-size: 2.1rem; }
+    section { margin-top: 3.2rem; }
+    h2 { font-size: 1.55rem; margin-bottom: 1.3rem; }
+    h3.cat-title { font-size: 0.95rem; letter-spacing: 0.06em; }
     .paper { margin: 0 -0.5rem 0.5rem; padding: 0.75rem 0.5rem; }
   }
 </style>
@@ -175,7 +194,9 @@
   <section class="bio" id="bio">
     <h2>Bio</h2>
     <p>I'm an associate professor at the <em>Academy of Mathematics and Systems Sciences</em> within the <em>Chinese Academy of Sciences</em> in Beijing. My interest in mathematics started at the University of Maryland, where I received my Bachelor's in 2011 and PhD in 2016. Most of my recent work concerns singular stochastic PDEs and related problems in mathematical physics.</p>
-    <p class="scholar"><a href="https://scholar.google.com/citations?user=zsaUBc0AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar profile &rarr;</a></p>
+    <!-- scholar.google.com is not reachable from mainland China; the arXiv listing
+         beside it is, so every visitor has at least one working index of the work. -->
+    <p class="scholar"><a href="https://arxiv.org/a/smith_s_1" target="_blank" rel="noopener noreferrer">arXiv listing &rarr;</a><span class="sep">&middot;</span><a href="https://scholar.google.com/citations?user=zsaUBc0AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar &rarr;</a></p>
   </section>
   <section id="papers">
     <h2>Papers</h2>
